@@ -1,0 +1,60 @@
+[14:32] Aashlesha Baburao Kondgire
+
+@using System.Data
+
+@model DataTable
+
+<h1>Product Listing</h1>
+
+<hr>
+
+<table class ="table">
+
+    <th><iframe src=" frameborder="0"></iframe>d</th>
+
+    <th>name</th>
+
+    <th>hindi</th>
+
+    <th>math</th>
+
+    <th>english</th>
+
+    <tbody>
+
+        @foreach(DataRow dr in Model.Rows)
+
+        {
+
+            <tr>
+
+                <td>@dr["id"]</td>
+
+                <td>@dr["name"]</td>
+
+                <td>@dr["hindi"]</td>
+
+                <td>@dr["math"]</td>
+                
+                <td>@dr["english"]</td>
+
+               @{
+
+                    int total=0;
+
+                    total=Convert.ToInt32(@dr["hindi"])+Convert.ToInt32(@dr["maths"])+Convert.ToInt32(@dr["english"]);
+
+                }
+
+
+                <td>@total</td>
+        }
+
+            </tr>
+
+        }
+
+    </tbody>
+
+</table>
+    
